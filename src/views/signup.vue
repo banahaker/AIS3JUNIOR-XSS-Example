@@ -4,7 +4,7 @@
     <input type="text" placeholder="Username" />
     <input type="password" name="psd" id="psd" placeholder="Password" />
     <p>Or <router-link to="/login">Login</router-link></p>
-    <button>Login</button>
+    <button>Sign Up</button>
   </div>
 </template>
 
