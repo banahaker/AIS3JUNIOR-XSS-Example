@@ -3,12 +3,6 @@
     <h1>Sign Up</h1>
     <input type="text" placeholder="Username" />
     <input type="password" name="psd" id="psd" placeholder="Password" />
-    <input
-      type="password"
-      name="confirm"
-      id="confirm"
-      placeholder="Confirm Password"
-    />
     <p>Or <router-link to="/login">Login</router-link></p>
     <button>Login</button>
   </div>
