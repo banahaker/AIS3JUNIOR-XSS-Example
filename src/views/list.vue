@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import router from "../router";
-import { onMounted, ref } from "vue";
+import { onBeforeUnmount, onMounted, onUnmounted, ref } from "vue";
 import axios from "axios";
 interface postData {
   content: string;
@@ -10,19 +10,17 @@ interface postData {
 
 const postList = ref<Array<postData>>([]);
 const url = "https://Attackme.b0925138932.repl.co/getPost";
-onMounted(() => {
-  axios({
-    method: "GET",
-    url,
+axios({
+  method: "GET",
+  url,
+})
+  .then((res) => {
+    const data = res.data as postData[];
+    postList.value = data;
   })
-    .then((res) => {
-      const data = res.data as postData[];
-      postList.value = data;
-    })
-    .catch((err) => {
-      alert("Server Error");
-    });
-});
+  .catch((err) => {
+    alert("Server Error");
+  });
 </script>
 
 <template>
@@ -39,7 +37,7 @@ onMounted(() => {
     <div class="list">
       <div class="post" v-for="item in postList">
         <p>User ID:{{ item.user_id }}</p>
-        <p style="margin-top: 10px" v-html="item.content"></p>
+        <div style="margin-top: 10px" v-html="item.content"></div>
       </div>
     </div>
   </div>
