@@ -16,6 +16,11 @@ const routes: RouteRecordRaw[] = [
     path: "/post",
     component: () => import("./views/post.vue"),
   },
+  {
+    name: "Post List",
+    path: "/",
+    component: () => import("./views/list.vue"),
+  },
 ];
 
 const router = createRouter({
