@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import axios from "axios";
+import router from "../router";
 interface LoginForm {
   account: string;
   password: string;
@@ -35,6 +36,7 @@ function login(data: LoginForm) {
       localStorage.setItem("password", data.password);
       Logging.value = false;
       alert("Login Succeed");
+      router.push("/");
     })
     .catch((err) => {
       console.log(err.response.data);

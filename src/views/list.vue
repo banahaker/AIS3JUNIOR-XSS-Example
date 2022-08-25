@@ -55,7 +55,7 @@ onMounted(() => {
   .list {
     margin-top: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     .post {
       background-color: #eee;
       padding: 10px;
