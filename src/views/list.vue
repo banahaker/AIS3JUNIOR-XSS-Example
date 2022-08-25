@@ -37,7 +37,7 @@ axios({
     <div class="list">
       <div class="post" v-for="item in postList">
         <p>User ID:{{ item.user_id }}</p>
-        <div style="margin-top: 10px" v-html="item.content"></div>
+        <div style="margin-top: 10px">{{ item.content }}</div>
       </div>
     </div>
   </div>
